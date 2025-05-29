@@ -1,0 +1,23 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+{% block title %}Trang chủ - Dự báo điểm thi sinh viên{% endblock %}
+{% block content %}
+  <h1>Dự báo điểm thi sinh viên</h1>
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+  <form method="POST" action="{{ url_for('index') }}" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="file">Chọn file CSV:</label>
+      <input type="file" name="file" id="file" required>
+    </div>
+    <div class="form-group">
+      <label for="model_type">Chọn kiểu dự báo:</label>
+      <select name="model_type" id="model_type" required>
+        <option value="regression">Regression (Dự báo điểm số)</option>
+        <option value="classification">Classification (Pass/Fail)</option>
+      </select>
+    </div>
+    <button type="submit">Dự báo</button>
+  </form>
+{% endblock %}

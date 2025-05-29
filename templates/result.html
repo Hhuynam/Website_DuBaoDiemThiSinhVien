@@ -1,0 +1,17 @@
+<!-- templates/result.html -->
+{% extends "base.html" %}
+{% block title %}Kết quả dự báo{% endblock %}
+{% block content %}
+  <h1>Kết quả dự báo - {{ model_type|capitalize }}</h1>
+  <section class="result-section">
+    <h2>Bảng kết quả (10 dòng đầu):</h2>
+    <div class="result-table">
+      {{ table_html | safe }}
+    </div>
+    <h2>Biểu đồ dự báo:</h2>
+    <div class="chart">
+      <img src="data:image/png;base64,{{ plot_base64 }}" alt="Biểu đồ dự báo">
+    </div>
+    <a href="{{ url_for('index') }}" class="btn-back">Trở về trang chủ</a>
+  </section>
+{% endblock %}

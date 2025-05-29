@@ -1,0 +1,214 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Thiết lập cho toàn trang với Flexbox để footer nằm dưới cùng */
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Các phần nội dung chính sẽ được đẩy dần lên để footer ở cuối trang */
+.main-content {
+  flex: 1;
+}
+
+/* Header & Banner */
+header {
+  background: url("../images/banner.png") no-repeat center;
+  background-size: cover;
+  height: 300px;
+  position: relative;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* tạo overlay nhẹ */
+}
+
+header nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+header nav ul li {
+  margin: 0 15px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #f0ad4e;
+}
+
+header .banner-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+  color: #fff;
+}
+
+header .banner-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header .banner-text p {
+  font-size: 1.2rem;
+}
+
+/* Container Chính */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Tiêu đề */
+h1, h2 {
+  color: #222;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Form Style */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type="file"],
+select,
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Bảng dữ liệu */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table thead {
+  background-color: #007bff;
+  color: #fff;
+}
+
+table th,
+table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hình ảnh */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer - cố định cuối nội dung */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+}
+  
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    height: 200px;
+  }
+  
+  header .banner-text h1 {
+    font-size: 1.8rem;
+  }
+  
+  header .banner-text p {
+    font-size: 1rem;
+  }
+  
+  header nav ul {
+    flex-direction: column;
+  }
+  
+  header nav ul li {
+    margin: 10px 0;
+  }
+  
+  .container {
+    margin: 10px;
+    padding: 15px;
+  }
+}
