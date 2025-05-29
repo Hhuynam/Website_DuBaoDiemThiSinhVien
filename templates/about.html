@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Giới thiệu{% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <h1>Về chúng tôi</h1>
+    <p>Chào mừng bạn đến với hệ thống dự báo điểm thi sinh viên.</p>
+    <p>Chúng tôi sử dụng công nghệ AI để phân tích dữ liệu học tập và đưa ra dự báo chính xác về kết quả thi của sinh viên.</p>
+    <h2>Mục tiêu</h2>
+    <p>- Hỗ trợ sinh viên dự báo điểm số dựa trên dữ liệu học tập.</p>
+    <p>- Cung cấp thông tin phân tích về xu hướng kết quả học tập.</p>
+    <p>- Giúp sinh viên có kế hoạch học tập phù hợp để đạt kết quả tốt hơn.</p>
+    <div class="back-home">
+        <a href="{{ url_for('index') }}" class="btn-back">Quay lại trang chủ</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Hướng dẫn sử dụng{% endblock %}
+
+{% block content %}
+<div class="guide-container">
+    <h1>Hướng dẫn sử dụng hệ thống dự báo điểm thi</h1>
+    <p>Chào mừng bạn đến với hệ thống dự báo điểm thi sinh viên! Dưới đây là các bước để sử dụng webapp.</p>
+
+    <h2>Bước 1: Chuẩn bị dữ liệu</h2>
+    <p>- Bạn cần có một file CSV chứa thông tin sinh viên và điểm số của họ.</p>
+    <p>- Các cột dữ liệu phổ biến bao gồm: <strong>Giới tính, Dân tộc, Trình độ học vấn của phụ huynh, Loại bữa ăn, Khóa luyện thi, Điểm toán</strong>.</p>
+
+    <h2>Bước 2: Upload file CSV</h2>
+    <p>- Nhấn vào nút <strong>"Chọn file CSV"</strong> trên trang chủ.</p>
+    <p>- Chọn file CSV từ máy tính của bạn và đảm bảo đúng định dạng.</p>
+
+    <h2>Bước 3: Chọn loại dự báo</h2>
+    <p>- <strong>Regression</strong>: Dự báo điểm số của sinh viên.</p>
+    <p>- <strong>Classification</strong>: Phân loại sinh viên **Đỗ** hoặc **Trượt** dựa trên điểm số.</p>
+
+    <h2>Bước 4: Xem kết quả</h2>
+    <p>- Sau khi gửi dữ liệu, hệ thống sẽ hiển thị bảng kết quả và biểu đồ.</p>
+    <p>- Bạn có thể tải xuống hoặc phân tích thêm dựa trên kết quả.</p>
+
+    <h2>Bước 5: Quay lại trang chủ</h2>
+    <div class="back-home">
+        <a href="{{ url_for('index') }}" class="btn-back">Quay lại trang chủ</a>
+    </div>
+</div>
+{% endblock %}

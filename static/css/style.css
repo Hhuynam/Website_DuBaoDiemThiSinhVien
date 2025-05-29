@@ -122,30 +122,76 @@ label {
   font-weight: bold;
 }
 
-input[type="file"],
-select,
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+/* Tùy chỉnh cho input file và nút chọn file */
+input[type="file"] {
+  font-size: 1rem;
+  /* Loại bỏ một số kiểu mặc định không mong muốn */
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
 }
 
-button {
-  display: inline-block;
+input[type="file"]::file-selector-button {
   background-color: #007bff;
   color: #fff;
-  padding: 12px 25px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #0056b3;
+}
+
+/* Tùy chỉnh cho dropdown (select) */
+select {
+  appearance: none;            /* Loại bỏ giao diện mặc định */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 40px 10px 10px;  /* Tạo không gian cho mũi tên */
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2210%22%20height%3D%226%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M0%200l5%206%205-6z%22%20fill%3D%22%23777%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px auto;
+}
+
+select:focus {
+  border-color: #007bff;
+}
+
+/* Button Style */
+button {
+  display: inline-block;
+  background: linear-gradient(145deg, #007bff, #0056b3);
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(145deg, #0056b3, #007bff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Bảng dữ liệu */
@@ -177,7 +223,7 @@ img {
   height: auto;
 }
 
-/* Footer - cố định cuối nội dung */
+/* Footer - cố định cuối nội dung (sử dụng layout flex, không cần position fixed) */
 footer {
   background-color: #333;
   color: #fff;
@@ -211,4 +257,70 @@ footer {
     margin: 10px;
     padding: 15px;
   }
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.contact-container h1, .contact-container h2 {
+  text-align: center;
+  color: #007bff;
+}
+
+.contact-info {
+  font-size: 1.2rem;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+}
+
+.guide-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.guide-container h1, .guide-container h2 {
+  text-align: center;
+  color: #007bff;
+}
+
+.guide-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.back-home {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: #0056b3;
 }

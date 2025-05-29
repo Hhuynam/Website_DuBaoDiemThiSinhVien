@@ -73,5 +73,23 @@ def api_train():
     else:
         return jsonify({"error": "File không hợp lệ. Chỉ chấp nhận file CSV."}), 400
 
+@app.route('/lien-he', methods=['GET', 'POST'])
+def contact():
+    if request.method == 'POST':
+        name = request.form.get("name")
+        email = request.form.get("email")
+        message = request.form.get("message")
+        print(f"Nhận tin nhắn từ {name} ({email}): {message}")  # Hiện lên terminal
+        return render_template('contact.html', success=True)  # Hiển thị thông báo thành công
+    return render_template('contact.html')
+
+@app.route('/gioi-thieu')
+def about():
+    return render_template('about.html')
+
+@app.route('/huong-dan')
+def guide():
+    return render_template('guide.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
